@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% if message %}
+            <h1 class="message">{{ message }}</h1>
+        {% endif %}
+        {% if show_answer %}
+            <h1 class="answer">Correct Answer: {{ res.Answer }}</h1>
+            <p class="explanation"><strong>Explanation:</strong> {{ res.Explanation }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

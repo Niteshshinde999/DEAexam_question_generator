@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="question-box">
+            <p class="question-text">Q: {{ r.question }}</p>
+            <form method="POST">
+                {% csrf_token %}
+                <label class="option"><input type="radio" name="choice" value="A"> A: {{ r.options.A }}</label>
+                <label class="option"><input type="radio" name="choice" value="B"> B: {{ r.options.B }}</label>
+                <label class="option"><input type="radio" name="choice" value="C"> C: {{ r.options.C }}</label>
+                <label class="option"><input type="radio" name="choice" value="D"> D: {{ r.options.D }}</label>
+                <button type="submit" name="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+        <form method="POST" class="next-form">
+            {% csrf_token %}
+            <button type="submit" name="regenerate" class="btn-next">Next Question</button>
+        </form>
+    </div>
+</body>
+</html>

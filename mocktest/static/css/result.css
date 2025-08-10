@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    color: #2c3e50;
+    text-align: center;
+}
+
+.answer {
+    color: #27ae60;
+    margin-top: 20px;
+}
+
+.explanation {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.5;
+}
