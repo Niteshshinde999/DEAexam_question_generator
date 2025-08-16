@@ -7,6 +7,7 @@ load_dotenv()
 # Set your Google Gemini API key
 genai.configure(api_key= os.getenv("API_KEY"))
 
+
 def getData(payload: str):
     try:
         model = genai.GenerativeModel("gemini-2.0-flash")
