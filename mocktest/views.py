@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 import json
 from . import gemini
 from . import codebase
+
 def hello(request):
     if 'results' not in request.session or 'regenerate' in request.POST:
         prompt = codebase.geminiprompt()
@@ -23,4 +24,5 @@ def hello(request):
         return render(request,'result.html',{'message': message,'show_answer': show_answer, 'res':res})
     result = {'question':results[0]['question'], 'options':results[0]['options']}
     return render(request, 'home.html', {'r': result})
+
 
